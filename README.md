@@ -1,6 +1,6 @@
-# Ejercicio 1: Servidor Express con Redirección Dinámica
+# Ejercicio 1: Servidor Node (Express) con Redirección Dinámica
 
-Este proyecto es parte de la evaluación de la unidad curricular **Programación con Node.js**. El objetivo es implementar un servidor web básico utilizando **Express** que gestione peticiones GET y POST, procesamiento de formularios y redirecciones dinámicas con parámetros de consulta (query params).
+Este proyecto es parte de la evaluación de la unidad curricular **Programación con Node.js**. El objetivo es implementar un servidor web básico utilizando **Node (Express)** que gestione peticiones GET y POST, procesamiento de formularios y redirecciones dinámicas con parámetros de consulta (query params).
 
 ## Información del Estudiante
 
