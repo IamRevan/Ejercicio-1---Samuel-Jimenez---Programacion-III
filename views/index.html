@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>UNETI - Actividad Node.js</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Animate.css for dynamic animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#4648d4",
+                      "on-surface": "#1b1b23",
+                      "on-surface-variant": "#464554",
+                      "background": "#fcf8ff",
+                      "surface": "#fcf8ff",
+              },
+              "borderRadius": {
+                      "lg": "2rem",
+                      "xl": "3rem",
+              }
+            },
+          },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at top right, #e1e0ff 0%, #fcf8ff 100%);
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px 0 rgba(49, 46, 129, 0.08);
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #4648d4 0%, #8127cf 100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(70, 72, 212, 0.3);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-between bg-background selection:bg-indigo-100">
+    <!-- Header: Logo simple -->
+    <header class="w-full py-6 px-8 animate__animated animate__fadeInDown">
+        <div class="max-w-7xl mx-auto flex justify-center md:justify-start">
+            <div class="text-3xl font-extrabold text-primary tracking-tight">ZooVibe</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center w-full px-6 py-12">
+        <div class="glass-card w-full max-w-lg rounded-xl p-8 flex flex-col items-center text-center animate__animated animate__zoomIn">
+            <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6 animate__animated animate__bounceIn animate__delay-1s">
+                <span class="text-3xl">🐾</span>
+            </div>
+            
+            <div class="space-y-3 mb-8">
+                <h1 class="text-3xl font-bold text-on-surface">¿Cuál es tu animal favorito?</h1>
+                <p class="text-on-surface-variant text-sm">
+                    Ingresa el nombre de tu animal preferido para continuar.
+                </p>
+            </div>
+
+            <form action="/procesar-animal" class="w-full space-y-4" method="POST">
+                <div class="relative w-full group">
+                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors">search</span>
+                    <input name="animal" class="w-full pl-12 pr-4 py-3 bg-white/50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none text-on-surface" placeholder="Ej. Jaguar, Cóndor..." required="" type="text"/>
+                </div>
+                <button class="btn-gradient w-full py-3 text-white font-bold rounded-xl shadow-lg" type="submit">
+                    Enviar Respuesta
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer: Datos del Usuario y UNETI -->
+    <footer class="w-full bg-white/40 backdrop-blur-sm py-8 border-t border-gray-200/50 animate__animated animate__fadeInUp">
+        <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+                <p class="font-bold text-primary text-lg">UNETI</p>
+                <p class="text-on-surface-variant text-sm">Universidad Nacional Experimental de las Telecomunicaciones e Informática</p>
+            </div>
+            
+            <div class="text-center md:text-right">
+                <p class="font-semibold text-on-surface">Samuel Jimenez</p>
+                <p class="text-on-surface-variant text-sm">C.I. 31192094</p>
+                <p class="text-primary/70 text-xs font-bold mt-1 uppercase tracking-widest">Actividad de Programación - Node.js</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
